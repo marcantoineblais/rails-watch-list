@@ -1,0 +1,34 @@
+.card-index {
+  position:relative;
+  display: flex;
+  padding: 0;
+  width: 100%;
+  margin-bottom: 12em;
+
+  h2{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #eee;
+    font-size: 64px;
+
+  }
+
+  img {
+    flex-grow: 1;
+    height:300px;
+    object-fit: cover;
+    text-align: center;
+    vertical-align: center;
+  }
+
+  .opacity-filter {
+    background: linear-gradient(90deg, #170017aa, #000e2baa);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}

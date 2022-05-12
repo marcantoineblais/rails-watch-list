@@ -1,0 +1,12 @@
+.card-movie {
+  display: flex;
+  padding: 1em 3em;
+  width: 100%;
+
+  img {
+    height:300px;
+    object-fit: cover;
+    text-align: center;
+    vertical-align: center;
+  }
+}
