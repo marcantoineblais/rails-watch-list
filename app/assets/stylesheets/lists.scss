@@ -111,3 +111,12 @@
     }
   }
 }
+
+.cards {
+  display: flex;
+  align-items: center;
+
+  .card-images {
+    flex-grow: 1;
+  }
+}

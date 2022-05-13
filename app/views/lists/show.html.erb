@@ -1,23 +1,62 @@
-<div class="form-container-show">
-  <h3>Add a movie:</h3>
-  <%= simple_form_for([@list, @bookmark]) do |f| %>
-    <%= f.input :comment, placeholder: 'Personnal note', label: false %>
-    <div class="select-send">
-      <% option = options_from_collection_for_select(@movies, :id, :title) %>
-      <%= f.select :movie, option %>
-      <%= f.button :submit, value: 'Add movie' %>
+<% unless @bookmark.id %>
+  <div class="form-container-show">
+    <h3>Add a movie:</h3>
+    <%= simple_form_for([@list, @bookmark]) do |f| %>
+      <%= f.input :comment, placeholder: 'Personnal note', label: false %>
+      <div class="select-send">
+        <% option = options_from_collection_for_select(@movies, :id, :title) %>
+        <%= f.select :movie, option %>
+        <%= f.button :submit, value: 'Add movie' %>
+      </div>
+    <% end %>
+</div>
+<% end %>
+
+
+<div class="d-flex flex-column">
+  <% if @bookmark.id %>
+
+    <div class="card-movie mt-4">
+      <div>
+        <h2><%= @bookmark.movie.title %></h2>
+        <p>Rating: <%= @bookmark.movie.rating %></p>
+        <p class="overview"><%= @bookmark.movie.overview %></p>
+        <%= simple_form_for([@bookmark]) do |f| %>
+          <%= f.input :comment, placeholder: 'Personnal note', label: false %>
+          <%= f.button :submit, value: 'Update' %>
+        <% end %>
+        <div class="icons">
+          <%= link_to bookmark_path(@bookmark), data: { method: :delete, confirm: "Are you sure?" } do %>
+            <i class="fa-solid fa-trash-can"></i>
+          <% end %>
+          <%= link_to "#" do %>
+            <i class="fa-solid fa-pen"></i>
+          <% end %>
+        </div>
+      </div>
+      <img src="<%= @bookmark.movie.poster_url %>" alt="">
     </div>
+
+  <% else %>
+
+    <% @list.bookmarks.sort_by { |b| b.movie.title}.each do |b| %>
+      <div class="card-movie">
+        <div>
+          <h2><%= b.movie.title %></h2>
+          <p>Rating: <%= b.movie.rating %></p>
+          <p class="overview"><%= b.movie.overview %></p>
+          <p class="comment"><strong><%= b.comment %></strong></p>
+          <div class="icons">
+            <%= link_to bookmark_path(b), data: { method: :delete, confirm: "Are you sure?" } do %>
+              <i class="fa-solid fa-trash-can"></i>
+            <% end %>
+            <%= link_to edit_list_bookmark_path(b.list, b) do %>
+              <i class="fa-solid fa-pen"></i>
+            <% end %>
+          </div>
+        </div>
+        <img src="<%= b.movie.poster_url %>" alt="">
+      </div>
+      <% end %>
   <% end %>
 </div>
-
-<% @list.movies.each do |m| %>
-  <div class="card-movie">
-    <div>
-      <h2><%= m.title %></h2>
-      <p>Rating: <%= m.rating %></p>
-      <p class="overview"><%= m.overview %></p>
-      <p class="comment"><strong><%= m.bookmarks.find_by("list_id = #{@list.id}").comment %></strong></p>
-    </div>
-    <img src="<%= m.poster_url %>" alt="">
-  </div>
-<% end %>

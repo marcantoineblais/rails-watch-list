@@ -1,13 +1,18 @@
-<% @lists.each do |l| %>
-  <%= link_to list_path(l) do %>
-  <div class="card-index">
-    <% l.movies.first(5).each do |m| %>
-      <img src="<%= m.poster_url %>">
+<% @lists.sort_by(&:name).each do |l| %>
+  <div class="cards">
+    <%= link_to list_path(l), class: 'card-images' do %>
+      <div class="card-index">
+        <% l.movies.first(5).each do |m| %>
+          <img src="<%= m.poster_url %>">
+        <% end %>
+        <div class="opacity-filter"></div>
+        <h2><%= l.name %></h2>
+      </div>
     <% end %>
-    <div class="opacity-filter"></div>
-    <h2><%= l.name %></h2>
+    <%= link_to bookmark_path(@bookmark), data: { method: :delete, confirm: "Are you sure?" } do %>
+      <i class="fa-solid fa-trash-can"></i>
+    <% end %>
   </div>
-  <% end %>
 <% end %>
 
 <div class="form-container-index" id="new-list">

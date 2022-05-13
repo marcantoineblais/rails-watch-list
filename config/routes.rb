@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  get '/', to: 'lists#redirect'
-  resources :lists, only: %i[create index show] do
-    resources :bookmarks, only: %i[create]
+  root to: 'lists#first_log'
+  resources :lists, only: %i[create index show destroy] do
+    resources :bookmarks, only: %i[update edit create]
   end
 
-  resources :bookmarks, only: [:destroy]
+  resources :bookmarks, only: %i[update destroy]
 end

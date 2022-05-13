@@ -5,16 +5,26 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <script src="https://kit.fontawesome.com/8dbd947086.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <nav>
+    <header class="banner" style="display: <%= @display || "none" %>">
+      <div class="container">
+        <div class="text">
+          <h1>The Movie Playlister</h1>
+          <p>Keep track of your favorites movie</p>
+          <%= link_to 'START NOW', '#navbar' %>
+        </div>
+      </div>
+    </header>
+
+    <nav id="navbar">
       <div class="container menu">
-        <%= link_to '#', id: 'brand' do %>
-          <h1>Movie Playlister</h1>
+        <%= link_to '/', id: 'brand' do %>
+          <h2>Movie Playlister</h2>
         <% end %>
         <div class="navigation">
           <%= link_to 'Home', lists_path %>

@@ -19,8 +19,16 @@ class ListsController < ApplicationController
     end
   end
 
-  def redirect
-    redirect_to lists_path
+  def destroy
+    list = List.find(params[:id])
+    list.destroy
+    redirect_to :index
+  end
+
+  def first_log
+    @display = 'block'
+    index
+    render :index
   end
 
   private

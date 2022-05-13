@@ -12,6 +12,14 @@
 @import "components/index";
 @import "pages/index";
 
+.body {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+body::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
+}
+
 body {
   background-color: #333;
   background: linear-gradient(#eeeeee55, #eeeeeecc);
