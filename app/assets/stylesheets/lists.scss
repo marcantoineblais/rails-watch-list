@@ -113,10 +113,32 @@
 }
 
 .cards {
-  display: flex;
   align-items: center;
+  justify-content: space-between;
+  margin-top: 3em;
+  margin-bottom: 3em;
+  transition-duration: 500ms;
+  overflow: hidden;
+  position: relative;
 
   .card-images {
-    flex-grow: 1;
+    transition-delay: 1000ms;
+    transition-duration: 1000ms;
+    width: 100%;
+  }
+
+  .trash {
+    position: absolute;
+    font-size: 72px;
+    padding-left: 1em;
+    top: 50%;
+    right: -2em;
+    transform: translateX(50%, 50%);
+    transition-duration: 1000ms;
+    color: #eee;
+  }
+
+  &:hover .trash  {
+    transform: translateX(-110%);
   }
 }
