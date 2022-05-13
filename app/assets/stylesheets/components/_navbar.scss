@@ -1,12 +1,44 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
-}
+nav {
+  background: linear-gradient(90deg, #231423, #202632);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
+  .menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+  }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+  .navigation {
+    display: flex;
+
+    a {
+      text-decoration: none;
+      color: #eee;
+      margin-right: 2em;
+      padding: 8px 16px;
+      box-shadow: 2px 2px 8px #eeeeee22;
+      text-shadow: 2px 2px 2px #eeeeee55;
+
+      &:hover {
+        color: #888;
+        box-shadow: 2px 2px 8px #88888822;
+        text-shadow: 2px 2px 2px #88888822;
+      }
+    }
+  }
+
+  h1 {
+    flex-grow: 1;
+    color: #eee;
+    text-shadow: 2px 2px 2px #eeeeee55;
+    padding-left: 1rem;
+  }
+
+  #brand {
+    text-decoration: none;
+  }
+
 }

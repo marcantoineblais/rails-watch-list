@@ -1,12 +1,37 @@
 .card-movie {
   display: flex;
-  padding: 1em 3em;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
+  height: 300px;
+  background: linear-gradient(90deg, #1700175d, #000e2bb6);
+  color: #ddd;
+  margin-bottom: 1em;
+  padding-left: 1em;
+
+  h2 {
+    margin-bottom: 1em;
+    margin-right: 5em;
+    border-bottom: 3px #eee solid;
+    color: #eee;
+  }
 
   img {
-    height:300px;
+    height:100%;
     object-fit: cover;
     text-align: center;
     vertical-align: center;
+    padding: 0;
+    margin: 0;
   }
+
+  .overview {
+    text-align: justify;
+    margin-right: 3em;
+  }
+
+  .comment {
+    color: #222;
+  }
+
 }

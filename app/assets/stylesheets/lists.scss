@@ -1,3 +1,113 @@
-// Place all the styles related to the lists controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.form-container-show {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 3em;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  h3 {
+    padding: 1em;
+    margin-bottom: 0;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    input.form-control {
+      background-color: #eeeeee;
+      width: 500px;
+      border: 1px solid #333;
+      padding: 5px 10px;
+      height: 32px;
+      font-size: 16px;
+    }
+
+    input.btn {
+      background-color: #eeeeee;
+      color: #555;
+      text-shadow: 2px 2px 2px #eeeeee55;
+      height: 32px;
+      padding: 5px 10px;
+      border: 1px solid #333;
+      border-left: none;
+      font-size: 16px;
+    }
+
+    select {
+      background-color: #eeeeee;
+      color: #555;
+      border: 1px solid #333;
+      padding: 6px 12px;
+      font-size: 16px;
+      flex-grow: 1;
+      height: 32px;
+    }
+
+    .select-send {
+      width: 500px;
+      display: flex;
+      justify-content: flex-end;
+
+      .btn {
+        border-top: none;
+      }
+
+      select {
+        border-top: none;
+      }
+    }
+
+    .mb-3 {
+      margin-bottom: 0!important;
+    }
+  }
+}
+
+.form-container-index {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 3em;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  h3 {
+    padding: 1em;
+    margin-bottom: 0;
+  }
+
+  form {
+    display: flex;
+    align-items: center;
+
+    input.form-control {
+      background-color: #eeeeee;
+      width: 500px;
+      border: 1px solid #333;
+      padding: 5px 10px;
+      height: 32px;
+      font-size: 16px;
+    }
+
+    input.btn {
+      background-color: #eeeeee;
+      color: #555;
+      text-shadow: 2px 2px 2px #eeeeee55;
+      height: 32px;
+      padding: 5px 10px;
+      border: 1px solid #333;
+      border-left: none;
+      font-size: 16px;
+    }
+    .mb-3 {
+      margin-bottom: 0!important;
+    }
+  }
+}

@@ -11,7 +11,18 @@
   </head>
 
   <body>
-    <div class="container">
+    <nav>
+      <div class="container menu">
+        <%= link_to '#', id: 'brand' do %>
+          <h1>Movie Playlister</h1>
+        <% end %>
+        <div class="navigation">
+          <%= link_to 'Home', lists_path %>
+          <%= link_to 'New Playlist', '/lists#new-list' %>
+        </div>
+      </div>
+    </nav>
+    <div class="container main">
       <%= yield %>
     </div>
   </body>
